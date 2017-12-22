@@ -1,0 +1,6 @@
+framework module Pods_SupTracker {
+  umbrella header "Pods-SupTracker-umbrella.h"
+
+  export *
+  module * { export * }
+}

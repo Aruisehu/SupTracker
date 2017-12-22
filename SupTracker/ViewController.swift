@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class ViewController: UIViewController {
 
@@ -19,7 +21,18 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    @IBOutlet weak var loginField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        let login = loginField.text!
+        let password = passwordField.text!
+        Alamofire.request("http://supinfo.steve-colinet.fr/suptracking/", method: .post,
+                          parameters: ["action": "login", "login": login, "password": password]).response {
+                            response in
+                            debugPrint(response)
+        }
+    }
 }
 
