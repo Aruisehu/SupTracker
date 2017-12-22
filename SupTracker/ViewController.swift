@@ -29,9 +29,12 @@ class ViewController: UIViewController {
         let login = loginField.text!
         let password = passwordField.text!
         Alamofire.request("http://supinfo.steve-colinet.fr/suptracking/", method: .post,
-                          parameters: ["action": "login", "login": login, "password": password]).response {
+                          parameters: ["action": "login", "login": login, "password": password]).responseJSON {
                             response in
                             debugPrint(response)
+                            let defaults = UserDefaults.standard
+                            defaults.set(login, forKey: "login")
+                            defaults.set(password, forKey: "password")
         }
     }
 }
