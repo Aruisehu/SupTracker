@@ -139,7 +139,7 @@ class MapController: UIViewController, CLLocationManagerDelegate {
 
             if login != nil && password != nil {
                 Alamofire.request("http://supinfo.steve-colinet.fr/suptracking/", method: .post,
-                                  parameters: ["action": "updatePosition", "login": "admin", "password": "admin", "latitude": String(lat), "longitude": String(lon)]).validate().responseJSON {
+                                  parameters: ["action": "updatePosition", "login": login!, "password": password!, "latitude": String(lat), "longitude": String(lon)]).validate().responseJSON {
                                     response in
                                     switch response.result {
                                     case .success(let value):
@@ -148,7 +148,10 @@ class MapController: UIViewController, CLLocationManagerDelegate {
                                             // Position send
                                             print("send")
                                         } else {
-                                            // TODO
+                                            let loginStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                            
+                                            let loginController = loginStoryboard.instantiateViewController(withIdentifier: "login")
+                                            self.present(loginController, animated: true, completion: nil)
                                         }
                                     case .failure(_):
                                         let alertController = UIAlertController(title: "Eeeermmm.....", message: "An error occured and we can't really fix it right now", preferredStyle: .actionSheet)
