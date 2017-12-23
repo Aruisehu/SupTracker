@@ -65,6 +65,43 @@ class MapController: UIViewController, CLLocationManagerDelegate {
     }
 
     @IBAction func findCar(_ sender: Any) {
+        let login = UserDefaults.standard.string(forKey: "login")!
+        let password = UserDefaults.standard.string(forKey: "password")!
+        print("lol")
+        Alamofire.request("http://supinfo.steve-colinet.fr/suptracking/", method: .post,
+                          parameters: ["action": "getCarPosition", "login": login, "password": password ]).validate().responseJSON {
+                            response in
+                            switch response.result {
+                            case .success(let value):
+                                let json = JSON(value)
+                                debugPrint(json)
+                                debugPrint(json["position"]["latitude"])
+                                if json["success"] == true{
+                                    let annotation = MKPointAnnotation()
+                                    let lat = json["position"]["latitude"].double!
+                                    let long = json["position"]["longitude"].double!
+                                    annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                                    self.mapView.addAnnotation(annotation)
+                                    self.centerMapOnLocation(location: CLLocation(latitude: lat, longitude: long))
+                                } else {
+                                    let loginStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+                                    let loginController = loginStoryboard.instantiateViewController(withIdentifier: "login")
+                                    self.present(loginController, animated: true, completion: nil)
+                                }
+                            case .failure(_):
+                                let alertController = UIAlertController(title: "How to explain...", message: "Well, as far as we know, your car is lost thorough the immensity of space and time... Well, good luck with that!", preferredStyle: .actionSheet)
+                                
+                                let shrugAction = UIAlertAction(title: "\u{1F937}", style: .default) { (action:UIAlertAction!) in
+                                    // close the popup
+                                }
+                                alertController.addAction(shrugAction)
+                                
+                                self.present(alertController, animated: true, completion:nil)
+                            }
+                            
+        }
+        
     }
 
     @IBAction func showAboutUs(_ sender: Any) {
