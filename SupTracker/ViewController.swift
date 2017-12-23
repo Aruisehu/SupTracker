@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 
 class ViewController: UIViewController {
@@ -29,12 +30,23 @@ class ViewController: UIViewController {
         let login = loginField.text!
         let password = passwordField.text!
         Alamofire.request("http://supinfo.steve-colinet.fr/suptracking/", method: .post,
-                          parameters: ["action": "login", "login": login, "password": password]).responseJSON {
+                          parameters: ["action": "login", "login": login, "password": password]).validate().responseJSON {
                             response in
-                            debugPrint(response)
-                            let defaults = UserDefaults.standard
-                            defaults.set(login, forKey: "login")
-                            defaults.set(password, forKey: "password")
+                            switch response.result {
+                                case .success(let value):
+                                    let json = JSON(value)
+                                    if json[0]["success"] == "true"{
+                                        let defaults = UserDefaults.standard
+                                        defaults.set(login, forKey: "login")
+                                        defaults.set(password, forKey: "password")
+                                    } else {
+                                        //TODO
+                                    }
+                                case .failure(_):
+                                    print("fail")
+                                
+                            }
+                            
         }
     }
 }

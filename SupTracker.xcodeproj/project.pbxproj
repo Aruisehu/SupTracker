@@ -17,6 +17,7 @@
 		F1175C041FE2E1D7000BCBCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1175C021FE2E1D7000BCBCF /* LaunchScreen.storyboard */; };
 		F1175C0F1FE2E1D7000BCBCF /* SupTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1175C0E1FE2E1D7000BCBCF /* SupTrackerTests.swift */; };
 		F1175C1A1FE2E1D7000BCBCF /* SupTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1175C191FE2E1D7000BCBCF /* SupTrackerUITests.swift */; };
+		F1C4E0431FEEA65A00A87688 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C4E0421FEEA65A00A87688 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		F1175C151FE2E1D7000BCBCF /* SupTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1175C191FE2E1D7000BCBCF /* SupTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupTrackerUITests.swift; sourceTree = "<group>"; };
 		F1175C1B1FE2E1D7000BCBCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1C4E0421FEEA65A00A87688 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C4E0431FEEA65A00A87688 /* MapKit.framework in Frameworks */,
 				E1D8DA4AEF43F51C93224DAB /* Pods_SupTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +161,7 @@
 		F6BDBD14CA90AC3CDC6DAC97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F1C4E0421FEEA65A00A87688 /* MapKit.framework */,
 				63F6F76E39EEEB85C3062B54 /* Pods_SupTracker.framework */,
 				587BDCDCBF0E631255BE7F8E /* Pods_SupTrackerTests.framework */,
 				E0A77339E8CDC0A9EECAF643 /* Pods_SupTrackerUITests.framework */,
@@ -243,6 +247,11 @@
 					F1175BF51FE2E1D6000BCBCF = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					F1175C091FE2E1D7000BCBCF = {
 						CreatedOnToolsVersion = 8.1;
@@ -441,10 +450,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SupTracker/Pods-SupTracker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
