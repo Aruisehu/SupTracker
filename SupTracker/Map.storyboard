@@ -12,7 +12,7 @@
         <!--Map Controller-->
         <scene sceneID="Pd0-HZ-eeT">
             <objects>
-                <viewController id="Nln-Se-FKI" customClass="MapController" sceneMemberID="viewController">
+                <viewController id="Nln-Se-FKI" customClass="MapController" customModule="SupTracker" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ddy-kE-bA0"/>
                         <viewControllerLayoutGuide type="bottom" id="1D3-kZ-rca"/>
@@ -50,8 +50,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="findCar" destination="sve-5g-1gI" id="6pU-rG-MlP"/>
-                        <outlet property="logout" destination="qGL-He-B2Z" id="7ho-wt-xIX"/>
+                        <outlet property="mapView" destination="sEX-aR-HdW" id="4W3-GF-KYY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AyN-1d-rgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
