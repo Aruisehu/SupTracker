@@ -36,13 +36,14 @@ class ViewController: UIViewController {
                             switch response.result {
                                 case .success(let value):
                                     let json = JSON(value)
-                                    if json[0]["success"] == "true"{
+                                    if json["success"] == true{
                                         let defaults = UserDefaults.standard
                                         defaults.set(login, forKey: "login")
                                         defaults.set(password, forKey: "password")
-                                        let mapStorybord = UIStoryboard(name: "Map", bundle: nil)
+                                        let mapStoryboard = UIStoryboard(name: "Map", bundle: nil)
                                         
-                                        let mapController = mapStorybord.instantiateViewController(withIdentifier: "map") as! MapController
+                                        let mapController = mapStoryboard.instantiateViewController(withIdentifier: "map")
+                                        self.present(mapController, animated: true, completion: nil)
                                         
                                     } else {
                                         //TODO

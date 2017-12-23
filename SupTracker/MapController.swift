@@ -31,13 +31,18 @@ class MapController: UIViewController {
     }
     @IBAction func findCar(_ sender: Any) {
     }
+    
     @IBAction func logout(_ sender: Any) {
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "login")
         defaults.removeObject(forKey: "password")
+        let loginStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
+        let loginController = loginStoryboard.instantiateViewController(withIdentifier: "login")
+        self.present(loginController, animated: true, completion: nil)
+        print("banane")
     }
-
+    
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                                   regionRadius, regionRadius)
