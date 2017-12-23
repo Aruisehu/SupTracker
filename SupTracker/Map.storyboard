@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map Controller-->
         <scene sceneID="Pd0-HZ-eeT">
             <objects>
-                <viewController id="Nln-Se-FKI" sceneMemberID="viewController">
+                <viewController id="Nln-Se-FKI" customClass="MapController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ddy-kE-bA0"/>
                         <viewControllerLayoutGuide type="bottom" id="1D3-kZ-rca"/>
@@ -27,8 +27,16 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2QE-PW-XC9">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Find my Car" id="sve-5g-1gI"/>
-                                    <barButtonItem title="Logout" id="qGL-He-B2Z"/>
+                                    <barButtonItem title="Find my Car" id="sve-5g-1gI">
+                                        <connections>
+                                            <action selector="findCar:" destination="Nln-Se-FKI" id="rJm-2q-fe2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Logout" id="qGL-He-B2Z">
+                                        <connections>
+                                            <action selector="logout:" destination="Nln-Se-FKI" id="8uT-vV-JFG"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -41,6 +49,10 @@
                             <constraint firstItem="sEX-aR-HdW" firstAttribute="leading" secondItem="o5f-Zf-2hq" secondAttribute="leading" id="foD-dG-6ud"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="findCar" destination="sve-5g-1gI" id="6pU-rG-MlP"/>
+                        <outlet property="logout" destination="qGL-He-B2Z" id="7ho-wt-xIX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AyN-1d-rgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

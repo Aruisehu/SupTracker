@@ -40,6 +40,10 @@ class ViewController: UIViewController {
                                         let defaults = UserDefaults.standard
                                         defaults.set(login, forKey: "login")
                                         defaults.set(password, forKey: "password")
+                                        let mapStorybord = UIStoryboard(name: "Map", bundle: nil)
+                                        
+                                        let mapController = mapStorybord.instantiateViewController(withIdentifier: "map") as! MapController
+                                        
                                     } else {
                                         //TODO
                                     }
