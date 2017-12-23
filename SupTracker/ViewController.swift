@@ -44,10 +44,24 @@ class ViewController: UIViewController {
                                         self.present(mapController, animated: true, completion: nil)
                                         
                                     } else {
-                                        //TODO
+                                        let alertController = UIAlertController(title: "You shall not pass!", message: "You are not admin / admin so fuck you", preferredStyle: .actionSheet)
+                                        
+                                        let WWAction = UIAlertAction(title: "Wait, Why?", style: .default) { (action:UIAlertAction!) in
+                                            // close the popup
+                                        }
+                                        alertController.addAction(WWAction)
+                                        
+                                        self.present(alertController, animated: true, completion:nil)
                                     }
                                 case .failure(_):
-                                    print("fail")
+                                    let alertController = UIAlertController(title: "Eeeermmm.....", message: "An error occured and we can't really fix it right now", preferredStyle: .actionSheet)
+                                    
+                                    let fuckAction = UIAlertAction(title: "Fuck", style: .default) { (action:UIAlertAction!) in
+                                        // close the popup
+                                    }
+                                    alertController.addAction(fuckAction)
+                                    
+                                    self.present(alertController, animated: true, completion:nil)
                                 
                             }
                             

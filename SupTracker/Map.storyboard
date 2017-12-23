@@ -22,11 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sEX-aR-HdW">
-                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="603" id="A6C-ul-x6V"/>
-                                    <constraint firstAttribute="height" constant="603" id="cjp-Uv-UBa"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="20" width="375" height="610"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWN-cH-dik">
                                 <rect key="frame" x="0.0" y="622" width="111" height="45"/>
@@ -43,16 +39,26 @@
                                     <action selector="logout:" destination="Nln-Se-FKI" eventType="touchUpInside" id="dNM-M5-TLi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgP-su-HLL">
+                                <rect key="frame" x="155.45935076127535" y="629" width="62.000000000000099" height="30.00000000000005"/>
+                                <state key="normal" title="About us"/>
+                                <connections>
+                                    <action selector="showAboutUs:" destination="Nln-Se-FKI" eventType="touchDown" id="A2b-kf-ni2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="EgP-su-HLL" firstAttribute="centerX" secondItem="o5f-Zf-2hq" secondAttribute="centerX" id="2Xg-Jn-9ly"/>
                             <constraint firstAttribute="trailing" secondItem="sEX-aR-HdW" secondAttribute="trailing" id="5MF-bM-jdR"/>
                             <constraint firstItem="eWN-cH-dik" firstAttribute="leading" secondItem="o5f-Zf-2hq" secondAttribute="leading" id="9K0-SJ-RJV"/>
                             <constraint firstAttribute="trailing" secondItem="qiM-ti-h8i" secondAttribute="trailing" id="IAJ-KF-ydA"/>
                             <constraint firstItem="sEX-aR-HdW" firstAttribute="top" secondItem="ddy-kE-bA0" secondAttribute="bottom" id="ICM-kx-cZI"/>
+                            <constraint firstItem="1D3-kZ-rca" firstAttribute="top" secondItem="EgP-su-HLL" secondAttribute="bottom" constant="2" id="LGq-ka-o8B"/>
                             <constraint firstItem="1D3-kZ-rca" firstAttribute="top" secondItem="qiM-ti-h8i" secondAttribute="bottom" constant="2" id="aI9-6M-ohL"/>
                             <constraint firstItem="sEX-aR-HdW" firstAttribute="leading" secondItem="o5f-Zf-2hq" secondAttribute="leading" id="pyP-IW-lMm"/>
                             <constraint firstItem="1D3-kZ-rca" firstAttribute="top" secondItem="eWN-cH-dik" secondAttribute="bottom" id="yiU-Nz-YI8"/>
+                            <constraint firstItem="qiM-ti-h8i" firstAttribute="top" secondItem="sEX-aR-HdW" secondAttribute="bottom" constant="5" id="zGt-vA-6Z5"/>
                         </constraints>
                     </view>
                     <connections>

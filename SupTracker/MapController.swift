@@ -67,6 +67,17 @@ class MapController: UIViewController, CLLocationManagerDelegate {
     @IBAction func findCar(_ sender: Any) {
     }
 
+    @IBAction func showAboutUs(_ sender: Any) {
+        let alertController = UIAlertController(title: "About us", message: "We are 2 students from Supinfo who have been tortured and locked up to make this app. Here in France, we call that 'un examen'. What a terrifying word.", preferredStyle: .alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+            // close the popup
+        }
+        alertController.addAction(OKAction)
+        
+        self.present(alertController, animated: true, completion:nil)
+    }
+    
     @IBAction func logout(_ sender: Any) {
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: "login")
@@ -75,7 +86,6 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         
         let loginController = loginStoryboard.instantiateViewController(withIdentifier: "login")
         self.present(loginController, animated: true, completion: nil)
-        print("banane")
     }
     
     func centerMapOnLocation(location: CLLocation) {
@@ -104,16 +114,33 @@ class MapController: UIViewController, CLLocationManagerDelegate {
                                             // TODO
                                         }
                                     case .failure(_):
-                                        print("fail")
+                                        let alertController = UIAlertController(title: "Eeeermmm.....", message: "An error occured and we can't really fix it right now", preferredStyle: .actionSheet)
+                                        
+                                        let fuckAction = UIAlertAction(title: "Fuck", style: .default) { (action:UIAlertAction!) in
+                                            // close the popup
+                                        }
+                                        alertController.addAction(fuckAction)
+                                        
+                                        self.present(alertController, animated: true, completion:nil)
                                     }
                                     
                 }
             } else {
-                // Login error
+                let loginStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let loginController = loginStoryboard.instantiateViewController(withIdentifier: "login")
+                self.present(loginController, animated: true, completion: nil)
             }
         }
         else {
-            // No Internet
+            let alertController = UIAlertController(title: "Ajit Pai is shit", message: "RIP Net Neutrality (or maybe you didn't activate internet)", preferredStyle: .actionSheet)
+            
+            let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+                // close the popup
+            }
+            alertController.addAction(OKAction)
+            
+            self.present(alertController, animated: true, completion:nil)
         }
     }
 }
