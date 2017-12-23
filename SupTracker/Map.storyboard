@@ -21,21 +21,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sEX-aR-HdW">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sEX-aR-HdW">
                                 <rect key="frame" x="0.0" y="20" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="603" id="A6C-ul-x6V"/>
+                                    <constraint firstAttribute="height" constant="603" id="cjp-Uv-UBa"/>
+                                </constraints>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWN-cH-dik">
-                                <rect key="frame" x="16" y="624" width="82" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWN-cH-dik">
+                                <rect key="frame" x="0.0" y="622" width="111" height="45"/>
                                 <state key="normal" title="Find my Car"/>
                                 <connections>
                                     <action selector="findCar:" destination="Nln-Se-FKI" eventType="touchDown" id="m6B-yc-Sck"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiM-ti-h8i">
-                                <rect key="frame" x="129" y="624" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qiM-ti-h8i">
+                                <rect key="frame" x="293" y="623" width="82" height="42"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="logout:" destination="Nln-Se-FKI" eventType="touchDown" id="2sH-9K-DiB"/>
@@ -44,6 +45,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sEX-aR-HdW" secondAttribute="trailing" id="5MF-bM-jdR"/>
+                            <constraint firstItem="eWN-cH-dik" firstAttribute="leading" secondItem="o5f-Zf-2hq" secondAttribute="leading" id="9K0-SJ-RJV"/>
+                            <constraint firstAttribute="trailing" secondItem="qiM-ti-h8i" secondAttribute="trailing" id="IAJ-KF-ydA"/>
+                            <constraint firstItem="sEX-aR-HdW" firstAttribute="top" secondItem="ddy-kE-bA0" secondAttribute="bottom" id="ICM-kx-cZI"/>
+                            <constraint firstItem="1D3-kZ-rca" firstAttribute="top" secondItem="qiM-ti-h8i" secondAttribute="bottom" constant="2" id="aI9-6M-ohL"/>
+                            <constraint firstItem="sEX-aR-HdW" firstAttribute="leading" secondItem="o5f-Zf-2hq" secondAttribute="leading" id="pyP-IW-lMm"/>
+                            <constraint firstItem="1D3-kZ-rca" firstAttribute="top" secondItem="eWN-cH-dik" secondAttribute="bottom" id="yiU-Nz-YI8"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="sEX-aR-HdW" id="4W3-GF-KYY"/>

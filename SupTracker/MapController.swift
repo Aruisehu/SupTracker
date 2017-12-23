@@ -86,13 +86,10 @@ class MapController: UIViewController, CLLocationManagerDelegate {
     
     func sendLocation() {
         if Connectivity.isConnectedToInternet {
-            print("anus")
+
             let login = UserDefaults.standard.string(forKey: "login")
             let password = UserDefaults.standard.string(forKey: "password")
-            
-            print(login!)
-            print(password!)
-            
+
             if login != nil && password != nil {
                 Alamofire.request("http://supinfo.steve-colinet.fr/suptracking/", method: .post,
                                   parameters: ["action": "updatePosition", "login": "admin", "password": "admin", "latitude": String(lat), "longitude": String(lon)]).validate().responseJSON {
@@ -100,11 +97,11 @@ class MapController: UIViewController, CLLocationManagerDelegate {
                                     switch response.result {
                                     case .success(let value):
                                         let json = JSON(value)
-                                        if json[0]["success"] == "true"{
+                                        if json["success"] == true{
                                             // Position send
                                             print("send")
                                         } else {
-                                            print(response)
+                                            // TODO
                                         }
                                     case .failure(_):
                                         print("fail")
