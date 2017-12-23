@@ -17,6 +17,7 @@
 		F1175C041FE2E1D7000BCBCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1175C021FE2E1D7000BCBCF /* LaunchScreen.storyboard */; };
 		F1175C0F1FE2E1D7000BCBCF /* SupTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1175C0E1FE2E1D7000BCBCF /* SupTrackerTests.swift */; };
 		F1175C1A1FE2E1D7000BCBCF /* SupTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1175C191FE2E1D7000BCBCF /* SupTrackerUITests.swift */; };
+		F1AF3B8A1FEEA86D0039B0B7 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1AF3B891FEEA86D0039B0B7 /* Map.storyboard */; };
 		F1C4E0431FEEA65A00A87688 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C4E0421FEEA65A00A87688 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		F1175C151FE2E1D7000BCBCF /* SupTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1175C191FE2E1D7000BCBCF /* SupTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupTrackerUITests.swift; sourceTree = "<group>"; };
 		F1175C1B1FE2E1D7000BCBCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1AF3B891FEEA86D0039B0B7 /* Map.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		F1C4E0421FEEA65A00A87688 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 				F1175BF91FE2E1D6000BCBCF /* AppDelegate.swift */,
 				F1175BFB1FE2E1D6000BCBCF /* ViewController.swift */,
 				F1175BFD1FE2E1D7000BCBCF /* Main.storyboard */,
+				F1AF3B891FEEA86D0039B0B7 /* Map.storyboard */,
 				F1175C001FE2E1D7000BCBCF /* Assets.xcassets */,
 				F1175C021FE2E1D7000BCBCF /* LaunchScreen.storyboard */,
 				F1175C051FE2E1D7000BCBCF /* Info.plist */,
@@ -292,6 +295,7 @@
 			files = (
 				F1175C041FE2E1D7000BCBCF /* LaunchScreen.storyboard in Resources */,
 				F1175C011FE2E1D7000BCBCF /* Assets.xcassets in Resources */,
+				F1AF3B8A1FEEA86D0039B0B7 /* Map.storyboard in Resources */,
 				F1175BFF1FE2E1D7000BCBCF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
